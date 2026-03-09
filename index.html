@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="quiz-box">
+
+    <!-- START SCREEN (only one) -->
+    <div id="start-screen" aria-label="Start screen">
+      <h1>Quiz Game</h1>
+
+      <p>Select Difficulty</p>
+
+      <div class="modes" role="group" aria-label="Select difficulty">
+        <button type="button" class="mode-btn" data-mode="easy">Easy</button>
+        <button type="button" class="mode-btn" data-mode="hard">Hard</button>
+        <button type="button" class="mode-btn" data-mode="veryhard">Very Hard</button>
+      </div>
+
+      <br>
+
+      <button type="button" id="start-btn" aria-label="Start quiz">Start Quiz</button>
+    </div>
+
+    <!-- QUIZ SCREEN -->
+    <div id="quiz-screen" class="hidden" aria-label="Quiz screen">
+
+      <div class="top-bar">
+        <div id="progress">Question 1</div>
+        <div id="timer">10s</div>
+      </div>
+
+      <div class="progress-bar" aria-hidden="true">
+        <div id="progress-fill"></div>
+      </div>
+
+      <h2 id="question" aria-live="polite"></h2>
+
+      <div class="answers" role="list">
+        <button type="button" class="answer-btn" data-answer="a" id="a"></button>
+        <button type="button" class="answer-btn" data-answer="b" id="b"></button>
+        <button type="button" class="answer-btn" data-answer="c" id="c"></button>
+        <button type="button" class="answer-btn" data-answer="d" id="d"></button>
+      </div>
+
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" class="hidden" aria-label="Result screen">
+      <h2 id="score-text" aria-live="polite"></h2>
+      <button type="button" id="restart-btn" onclick="restartQuiz()">Restart</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
